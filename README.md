@@ -9,8 +9,8 @@ I have developed this REST API for an e-commerce application using Spring Boot. 
 
 ## Tech Stack
 - Java
-Spring Framework
-Spring Boot
-Spring Data JPA
-Hibernate
-MySQL
+- Spring Framework
+- Spring Boot
+- Spring Data JPA
+- Hibernate
+- MySQL
