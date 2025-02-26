@@ -46,3 +46,20 @@ I have developed this REST API for an e-commerce application using Spring Boot. 
 | **POST**   | `/users/image/{userID}`      | Upload user profile image |
 | **GET**    | `/users/image/{userID}`      | Serve user profile image |
 
+## Category Module
+
+| HTTP Method | Endpoint                   | Description |
+|------------|---------------------------|-------------|
+| **POST**   | `/category/save`           | Create a new category |
+| **PUT**    | `/category/update/{categoryId}` | Update category details |
+| **DELETE** | `/category/delete/{categoryId}` | Delete a category |
+| **GET**    | `/category`                 | Get all categories (with pagination & sorting) |
+| **GET**    | `/category/{categoryId}`    | Get a single category by ID |
+
+## Category Image APIs  
+
+| HTTP Method | Endpoint                      | Description |
+|------------|------------------------------|-------------|
+| **POST**   | `/category/image/{categoryId}` | Upload category image |
+| **GET**    | `/category/download/{categoryId}` | Serve category image |
+
