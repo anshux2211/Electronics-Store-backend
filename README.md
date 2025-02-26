@@ -21,3 +21,10 @@ I have developed this REST API for an e-commerce application using Spring Boot. 
 - Cart Module
 - Order Module
 - Category Module
+
+## API Endpoints
+# Root Module
+- http://localhost:9091
+
+# User Module
+- 
