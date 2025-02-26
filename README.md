@@ -3,6 +3,6 @@ I have developed this REST API for an e-commerce application using Spring Boot. 
 
 ## E-R Diagram for the application
 <div align="center">
-  <img src="https://drive.google.com/file/d/137fliudv2QTUEoTBzLBCcuAIWm8jU-_f/view?usp=drive_link" width="200"/>
+  <img src="src/main/java/com/lcwd/electronic/store/pictures/E-R electronic store.png" width="200"/>
   <p></p>
 </div>
