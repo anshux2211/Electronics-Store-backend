@@ -6,3 +6,11 @@ I have developed this REST API for an e-commerce application using Spring Boot. 
   <img src="src/main/java/com/lcwd/electronic/store/pictures/E-R electronic store.png" width="800"/>
   <p></p>
 </div>
+
+## Tech Stack
+- Java
+Spring Framework
+Spring Boot
+Spring Data JPA
+Hibernate
+MySQL
