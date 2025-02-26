@@ -63,3 +63,23 @@ I have developed this REST API for an e-commerce application using Spring Boot. 
 | **POST**   | `/category/image/{categoryId}` | Upload category image |
 | **GET**    | `/category/download/{categoryId}` | Serve category image |
 
+## Product Module
+
+| HTTP Method | Endpoint                                  | Description |
+|------------|------------------------------------------|-------------|
+| **POST**   | `/product/save`                         | Create a new product |
+| **PUT**    | `/product/update/{productId}`           | Update product details |
+| **DELETE** | `/product/delete/{productId}`           | Delete a product |
+| **GET**    | `/product/{productId}`                  | Get a single product by ID |
+| **GET**    | `/product`                              | Get all products (with pagination & sorting) |
+| **GET**    | `/product/stock`                        | Get all available (in-stock) products |
+| **GET**    | `/product/search?name={productName}`    | Search products by name |
+| **GET**    | `/product/brand/{brandName}`           | Get products by brand name |
+| **GET**    | `/product/range?minPrice={min}&maxPrice={max}` | Get products within a price range |
+| **POST**   | `/product/upload/{productId}`          | Upload product image |
+| **GET**    | `/product/download/{productId}`        | Download product image |
+| **POST**   | `/product/save/category/{categoryId}`  | Create a product under a specific category |
+| **PUT**    | `/product/assign/{productId}/category/{categoryId}` | Assign a product to a category |
+| **GET**    | `/product/category/{categoryId}`       | Get all products under a specific category |
+
+
