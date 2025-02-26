@@ -82,4 +82,13 @@ I have developed this REST API for an e-commerce application using Spring Boot. 
 | **PUT**    | `/product/assign/{productId}/category/{categoryId}` | Assign a product to a category |
 | **GET**    | `/product/category/{categoryId}`       | Get all products under a specific category |
 
+## Cart Module
+
+| HTTP Method | Endpoint                          | Description |
+|------------|----------------------------------|-------------|
+| **POST**   | `/cart/save/{userId}`            | Add an item to the cart for a specific user |
+| **PUT**    | `/cart/remove/{userId}/{cartItemId}` | Remove an item from the cart |
+| **DELETE** | `/cart/clear/{userId}`           | Clear the cart for a specific user |
+| **GET**    | `/cart/{userId}`                 | Get the cart details for a specific user |
+
 
