@@ -1,5 +1,5 @@
-# REST API for an E-Commerce Application
-I have developed this REST API for an e-commerce application using Spring Boot. This API performs all the fundamental CRUD operations of any e-commerce platform with user validation at every step.
+# REST API for an Electronics Store Application
+I have developed this REST API for an Electronics Store using Spring Boot. This API performs all the fundamental CRUD operations of any e-commerce platform with user validation at every step.
 
 # E-R Diagram for the application
 <div align="center">
