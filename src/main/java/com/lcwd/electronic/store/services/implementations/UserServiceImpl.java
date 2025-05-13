@@ -2,9 +2,11 @@ package com.lcwd.electronic.store.services.implementations;
 
 import com.lcwd.electronic.store.dtos.PageableResponse;
 import com.lcwd.electronic.store.dtos.UserDto;
+import com.lcwd.electronic.store.entities.Role;
 import com.lcwd.electronic.store.entities.User;
 import com.lcwd.electronic.store.exception.ResourceNotFoundException;
 import com.lcwd.electronic.store.helper.ToPageableResponse;
+import com.lcwd.electronic.store.repositories.RoleRepository;
 import com.lcwd.electronic.store.repositories.UserRepositories;
 import com.lcwd.electronic.store.services.UserServices;
 import org.modelmapper.ModelMapper;
@@ -14,6 +16,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -36,6 +39,12 @@ public class UserServiceImpl implements UserServices {
     @Autowired
     private ModelMapper mapper;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+    @Autowired
+    private RoleRepository role_repo;
+
+
     @Value("${user.profile.image.path}")
     private String image_path;
 
@@ -43,8 +52,12 @@ public class UserServiceImpl implements UserServices {
     public UserDto createUser(UserDto user_dto) {
         String userId= UUID.randomUUID().toString();
         user_dto.setUserId(userId);
-
+        // Encoding Password
+        user_dto.setPassword(passwordEncoder.encode(user_dto.getPassword()));
         User user=dto_to_user(user_dto);
+
+        Role curr_role=role_repo.findByName("ROLE_NORMAL").orElseThrow(()-> new ResourceNotFoundException("Role Doesn't exist !!"));
+        user.setRoleList(List.of(curr_role));
 
         User user1=user_repo.save(user);
 
@@ -61,7 +74,7 @@ public class UserServiceImpl implements UserServices {
         old_user.setAbout(user.getAbout());
         old_user.setEmail(user.getEmail());
         old_user.setPhone(user.getPhone());
-        old_user.setPassword(user.getPassword());
+        old_user.setPassword(passwordEncoder.encode(user.getPassword()));
         old_user.setGender(user.getGender());
         old_user.setImageName(user.getImageName());
         old_user.setName(user.getName());

@@ -1,9 +1,13 @@
 package com.lcwd.electronic.store.dtos;
 
 
+import com.lcwd.electronic.store.entities.Role;
 import com.lcwd.electronic.store.validate.ImageNameValid;
 import jakarta.validation.constraints.*;
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -34,4 +38,6 @@ public class UserDto {
 
     @ImageNameValid
     private String imageName;
+
+    private List<RoleDto> roleList=new ArrayList<>();
 }
