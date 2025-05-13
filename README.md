@@ -14,8 +14,10 @@ I have developed this REST API for an Electronics Store using Spring Boot. This 
 - Spring Data JPA
 - Hibernate
 - MySQL
+- Swagger
 
 # Modules
+- Auth Module
 - User Module 
 - Product Module
 - Cart Module
@@ -25,6 +27,11 @@ I have developed this REST API for an Electronics Store using Spring Boot. This 
 # API Endpoints
 ## Root Module
 - http://localhost:9091
+
+| HTTP Method | Endpoint               | Description                                                                                                                  |
+| ----------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| **POST**    | `/auth/generate-token` | Authenticates a user with username and password. Returns a JWT token along with user details upon successful authentication. |
+
 
 ## User Module
 
