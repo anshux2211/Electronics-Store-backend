@@ -28,6 +28,8 @@ I have developed this REST API for an Electronics Store using Spring Boot. This 
 ## Root Module
 - http://localhost:9091
 
+## Auth Module
+
 | HTTP Method | Endpoint               | Description                                                                                                                  |
 | ----------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | **POST**    | `/auth/generate-token` | Authenticates a user with username and password. Returns a JWT token along with user details upon successful authentication. |
@@ -97,6 +99,8 @@ I have developed this REST API for an Electronics Store using Spring Boot. This 
 | **PUT**    | `/cart/remove/{userId}/{cartItemId}` | Remove an item from the cart |
 | **DELETE** | `/cart/clear/{userId}`           | Clear the cart for a specific user |
 | **GET**    | `/cart/{userId}`                 | Get the cart details for a specific user |
+
+## Order Module
 
 | HTTP Method | Endpoint                   | Description                                                                                                                                                                              |
 | ----------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
