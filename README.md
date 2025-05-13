@@ -91,4 +91,13 @@ I have developed this REST API for an Electronics Store using Spring Boot. This 
 | **DELETE** | `/cart/clear/{userId}`           | Clear the cart for a specific user |
 | **GET**    | `/cart/{userId}`                 | Get the cart details for a specific user |
 
+| HTTP Method | Endpoint                   | Description                                                                                                                                                                              |
+| ----------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **POST**    | `/orders/create`           | Create a new order (Admin only). Takes `CreateOrderRequest` in request body and returns the created order.                                                                               |
+| **DELETE**  | `/orders/remove/{orderId}` | Delete an existing order by `orderId` (Admin or Normal user).                                                                                                                            |
+| **GET**     | `/orders/users/{userId}`   | Get all orders placed by a specific user (Admin or Normal user).                                                                                                                         |
+| **GET**     | `/orders`                  | Get a paginated list of all orders with optional query params `pageNumber`, `pageSize`, `sortBy`, and `sortDir` (Admin or Normal user).                                                  |
+| **PUT**     | `/orders/update/{orderId}` | Update the status, payment status, or delivered date of an order by `orderId` (Admin only). Optional query params: `orderStatus`, `paymentStatus`, `deliveredDate` (format: yyyy-MM-dd). |
+
+
 
