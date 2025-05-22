@@ -1,0 +1,70 @@
+#services:
+#  mysqldb:
+#    image: mysql
+#    container_name: mysqldb
+#    ports:
+#      - "3306:3306"
+#    environment:
+#      MYSQL_ROOT_PASSWORD: 2211
+#      MYSQL_DATABASE: electronics_store
+#    healthcheck:
+#      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
+#    networks:
+#      - bootApp
+#
+#  store:
+#    image: mehtanshu/electronicstore.0
+#    container_name: store
+#    ports:
+#      - "9091:9091"
+#    environment:
+#      MYSQL_HOST: mysqldb
+#      MYSQL_PORT: 3306
+#    depends_on:
+#      mysqldb:
+#        condition: service_healthy
+#    networks:
+#      - bootApp
+#
+#networks:
+#  bootApp:
+#    driver: bridge
+
+
+services:
+  mysqldb:
+    image: mysql
+    container_name: mysqldb
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 2211
+      MYSQL_DATABASE: electronics_store
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - bootApp
+
+  store:
+    image: mehtanshu/electronicstore.0
+    container_name: store
+    ports:
+      - "9091:9091"
+    environment:
+      MYSQL_HOST: mysqldb
+      MYSQL_PORT: 3306
+    depends_on:
+      mysqldb:
+        condition: service_healthy
+    networks:
+      - bootApp
+
+networks:
+  bootApp:
+    driver: bridge

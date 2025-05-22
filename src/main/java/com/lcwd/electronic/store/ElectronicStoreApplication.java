@@ -32,29 +32,43 @@ public class ElectronicStoreApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-//		Role role=new Role();
-//		role.setId(UUID.randomUUID().toString());
-//		role.setName("ROLE_ADMIN");
-//		roleRepository.save(role);
-//
-//		Role role1=new Role();
-//		role1.setId(UUID.randomUUID().toString());
-//		role1.setName("ROLE_NORMAL");
-//		roleRepository.save(role1);
+		Role role=new Role();
+		role.setId(UUID.randomUUID().toString());
+		role.setName("ROLE_ADMIN");
 
-//		Role role=roleRepository.findByName("ROLE_ADMIN").orElse(null);
+
+		Role role1=new Role();
+		role1.setId(UUID.randomUUID().toString());
+		role1.setName("ROLE_NORMAL");
+
+
+
+
+		Role tmprole=roleRepository.findByName("ROLE_ADMIN").orElse(null);
+		if(tmprole==null){
+			roleRepository.save(role);
+		}
+
+		tmprole=roleRepository.findByName("ROLE_NORMAL").orElse(null);
+		if(tmprole==null){
+			roleRepository.save(role1);
+		}
+
 //
-//		User user=new User();
-//		user.setUserId(UUID.randomUUID().toString());
-//		user.setImageName("user1.jpg");
-//		user.setAbout("Software Engineer");
-//		user.setGender("Male");
-//		user.setName("Anshu Mehta");
-//		user.setEmail("anshu@gmail.com");
-//		user.setPhone("789689");
-//		user.setPassword(passwordEncoder.encode("anshu"));
-//		user.setRoleList(List.of(role));
-//		user_repo.save(user);
+		User user=user_repo.findByEmail("anshu@gmail.com").orElse(null);
+		if(user==null) {
+			user=new User();
+			user.setUserId(UUID.randomUUID().toString());
+			user.setImageName("user1.jpg");
+			user.setAbout("Software Engineer");
+			user.setGender("Male");
+			user.setName("Anshu Mehta");
+			user.setEmail("anshu@gmail.com");
+			user.setPhone("789689");
+			user.setPassword(passwordEncoder.encode("anshu"));
+			user.setRoleList(List.of(role));
+			user_repo.save(user);
+		}
 
 
 	}
