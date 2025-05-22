@@ -1,18 +1,19 @@
-FROM ubuntu:latest
+# ----------- Build Stage -----------
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 LABEL authors="mehta"
 
-ENTRYPOINT ["top", "-b"]
+WORKDIR /home/app
 
+COPY pom.xml .
+COPY src ./src
 
-FROM maven:3.6.0-jdk-17 AS build
-COPY src /home/app/src
-COPY pom.xml /home/app
-RUN mvn -f /home/app/pom.xml clean package
+RUN mvn clean package -DskipTests
 
-#
-# Package stage
-#
-FROM openjdk:17
+# ----------- Package Stage -----------
+FROM openjdk:17-jdk-slim
+
 COPY --from=build /home/app/target/getyourway-0.0.1-SNAPSHOT.jar /usr/local/lib/demo.jar
+
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/usr/local/lib/demo.jar"]
+
+ENTRYPOINT ["java", "-jar", "/usr/local/lib/demo.jar"]
