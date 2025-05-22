@@ -22,10 +22,12 @@ class ElectronicStoreApplicationTests {
 	@Test
 	void testToken(){
 		User user=user_repo.findByEmail("akash@gmail.com").orElse(null);
-		String token=jwt_helper.generateToken(user);
-		System.out.println("Generated Token: "+token);
-		System.out.println("Username: "+jwt_helper.getUsernameFromToken(token));
-		System.out.println("Is Token Expired: "+jwt_helper.isTokenExpired(token));
+		if(user!=null) {
+			String token = jwt_helper.generateToken(user);
+			System.out.println("Generated Token: " + token);
+			System.out.println("Username: " + jwt_helper.getUsernameFromToken(token));
+			System.out.println("Is Token Expired: " + jwt_helper.isTokenExpired(token));
+		}
 	}
 
 }
