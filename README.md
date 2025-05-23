@@ -18,6 +18,7 @@ The API documentation is available via Swagger.
 - Hibernate
 - MySQL
 - Swagger
+- Deployment:** AWS EC2 (for Backend), Railway (for Database)
 
 # Modules
 - Auth Module
