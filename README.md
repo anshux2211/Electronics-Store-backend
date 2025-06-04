@@ -1,5 +1,8 @@
 # REST API for an Electronics Store Application
-I have developed this REST API for an Electronics Store using Spring Boot. This API performs all the fundamental CRUD operations of any e-commerce platform with user validation at every step.
+I have developed this REST API for an Electronics Store using Spring Boot. This API performs all the fundamental CRUD operations of any e-commerce platform with user validation at every step. 
+
+The API documentation is available via Swagger.
+🔗 Live Swagger UI: http://ec2-44-204-20-134.compute-1.amazonaws.com:9211/swagger-ui/index.html
 
 # E-R Diagram for the application
 <div align="center">
@@ -15,6 +18,7 @@ I have developed this REST API for an Electronics Store using Spring Boot. This 
 - Hibernate
 - MySQL
 - Swagger
+- Deployment: AWS EC2 (for Backend), Railway (for Database)
 
 # Modules
 - Auth Module
