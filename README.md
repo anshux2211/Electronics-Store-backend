@@ -3,7 +3,7 @@ I have developed this REST API for an Electronics Store using Spring Boot. This 
 
 # E-R Diagram for the application
 <div align="center">
-  <img src="src/main/java/com/lcwd/electronic/store/pictures/er diagram.png" width="800"/>
+  <img src="src/main/java/com/example/electronic/store/pictures/er diagram.png" width="800"/>
   <p></p>
 </div>
 
